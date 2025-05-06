@@ -1,0 +1,234 @@
+{
+  "api": {
+    "name": "CapacitorVoiceRecorderPlugin",
+    "slug": "capacitorvoicerecorderplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "canRecord",
+        "signature": "() => Promise<{ status: CanRecordStatus; }>",
+        "parameters": [],
+        "returns": "Promise<{ status: CanRecordStatus; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CanRecordStatus"
+        ],
+        "slug": "canrecord"
+      },
+      {
+        "name": "requestPermission",
+        "signature": "() => Promise<{ isGranted: true; }>",
+        "parameters": [],
+        "returns": "Promise<{ isGranted: true; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "requestpermission"
+      },
+      {
+        "name": "startRecording",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "startrecording"
+      },
+      {
+        "name": "stopRecording",
+        "signature": "() => Promise<RecordingData>",
+        "parameters": [],
+        "returns": "Promise<RecordingData>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "RecordingData"
+        ],
+        "slug": "stoprecording"
+      },
+      {
+        "name": "pauseRecording",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "pauserecording"
+      },
+      {
+        "name": "resumeRecording",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "resumerecording"
+      },
+      {
+        "name": "getCurrentStatus",
+        "signature": "() => Promise<{ status: RecordStatus; }>",
+        "parameters": [],
+        "returns": "Promise<{ status: RecordStatus; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "RecordStatus"
+        ],
+        "slug": "getcurrentstatus"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'frequencyData', listenerFunc: (data: { base64: string; }) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'frequencyData'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(data: { base64: string; }) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerfrequencydata-"
+      },
+      {
+        "name": "removeAllListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "removealllisteners"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "RecordingError",
+      "slug": "recordingerror",
+      "members": [
+        {
+          "name": "NOT_RECORDING",
+          "value": "'NOT_RECORDING'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "DEVICE_NOT_SUPPORTED",
+          "value": "'DEVICE_NOT_SUPPORTED'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "MISSING_MICROPHONE_PERMISSION",
+          "value": "'MISSING_MICROPHONE_PERMISSION'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "MICROPHONE_IN_USE",
+          "value": "'MICROPHONE_IN_USE'",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "UNKNOWN_ERROR",
+          "value": "'UNKNOWN_ERROR'",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    }
+  ],
+  "typeAliases": [
+    {
+      "name": "CanRecordStatus",
+      "slug": "canrecordstatus",
+      "docs": "",
+      "types": [
+        {
+          "text": "'NOT_GRANTED'",
+          "complexTypes": []
+        },
+        {
+          "text": "'DISABLED_BY_USER'",
+          "complexTypes": []
+        },
+        {
+          "text": "RecordingError.DEVICE_NOT_SUPPORTED",
+          "complexTypes": [
+            "RecordingError"
+          ]
+        },
+        {
+          "text": "'GRANTED'",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "RecordingData",
+      "slug": "recordingdata",
+      "docs": "",
+      "types": [
+        {
+          "text": "{\n  base64: string;\n  msDuration: number;\n  size: number;\n}",
+          "complexTypes": []
+        }
+      ]
+    },
+    {
+      "name": "RecordStatus",
+      "slug": "recordstatus",
+      "docs": "",
+      "types": [
+        {
+          "text": "'RECORDING'",
+          "complexTypes": []
+        },
+        {
+          "text": "'PAUSED'",
+          "complexTypes": []
+        },
+        {
+          "text": "'NOT_RECORDING'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": []
+}
