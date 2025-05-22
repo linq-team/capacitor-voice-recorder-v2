@@ -78,9 +78,6 @@ class FrequencyAnalyzer {
             modifiedMagnitudes[i] /= 10
         }
 
-      print(modifiedMagnitudes)
-
-
         return modifiedMagnitudes
     }
 
