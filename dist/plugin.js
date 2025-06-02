@@ -40,7 +40,7 @@ var capacitorCapacitorVoiceRecorder = (function (exports, core, extendableMediaR
                 return Promise.reject(exports.RecordingError.DEVICE_NOT_SUPPORTED);
             }
             const hasPermission = await this.canRecord();
-            if (hasPermission) {
+            if (hasPermission.status === 'GRANTED') {
                 return { isGranted: true };
             }
             try {
